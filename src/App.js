@@ -8,11 +8,11 @@ import "./App.css"
 // import ListSientist from "./ListScientist"
 // import PokemonAleatoireGenerator from "./PokemonAleatoireGenerator"
 // import Copyright from "./Copyright"
-import React, { useCallback, useState } from "react"
-// import { sculptureList } from "./dataState.js"
-// import GalleryState from "./GalleryState"
+import React from "react"
 import { produce } from "immer"
 import { useImmer } from "use-immer"
+// import { sculptureList } from "./dataState.js"
+// import GalleryState from "./GalleryState"
 
 //#region default App
 // function App() {
@@ -37,9 +37,16 @@ import { useImmer } from "use-immer"
 // }
 //#endregion
 
-export default App
+export default function App() {
+  // const [person, updatePerson] = useImmer({
+  //   name: "Niki de Saint Phalle",
+  //   artwork: {
+  //     title: "Blue Nana",
+  //     city: "Hamburg",
+  //     image: "https://i.imgur.com/Sd1AgUOm.jpg",
+  //   },
+  // })
 
-function App() {
   return (
     <>
       <div>
@@ -49,7 +56,7 @@ function App() {
 
         {/* Region GAME <Game /> */}
         {/* <ThinkingInReact /> */}
-        <Form />
+        {/* <Form /> */}
         {/* <PokemonAleatoireGenerator>
           <p>Pokemon generator</p>
           <Copyright year={2004} />
@@ -77,15 +84,6 @@ function App() {
 
 //#region UpdateObjetInState
 function Form() {
-  const [person, updatePerson] = useImmer({
-    name: "Niki de Saint Phalle",
-    artwork: {
-      title: "Blue Nana",
-      city: "Hamburg",
-      image: "https://i.imgur.com/Sd1AgUOm.jpg",
-    },
-  })
-
   function handleNameChange(e) {
     updatePerson((draft) => {
       draft.name = e.target.value
